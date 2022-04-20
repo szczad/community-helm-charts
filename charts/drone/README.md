@@ -4,7 +4,7 @@
 
 A Helm chart for Drone Server and Drone Kubernetes Runner
 
-![Version: 0.0.1](https://img.shields.io/badge/Version-0.0.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.11.1](https://img.shields.io/badge/AppVersion-2.11.1-informational?style=flat-square)
+![Version: 0.0.2](https://img.shields.io/badge/Version-0.0.2-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.11.1](https://img.shields.io/badge/AppVersion-2.11.1-informational?style=flat-square)
 
 ## Get Helm Repository Info
 
@@ -135,7 +135,7 @@ helm upgrade [RELEASE_NAME] community-charts/drone
 | server.extraVolumes | list | `[]` | If you'd like to make additional files or volumes available to Drone, declare additional Volumes here per the Pod spec's "volumes" section. Ref: https://kubernetes.io/docs/concepts/storage/volumes/ |
 | server.image.pullPolicy | string | `"IfNotPresent"` | The drone server image pull policy |
 | server.image.repository | string | `"drone/drone"` | The drone server docker image repository to use |
-| server.image.tag | string | `"2.11.1"` | The drone server image tag to use |
+| server.image.tag | string | `""` | The drone server image tag to use. Default app version |
 | server.ingress.annotations | object | `{}` | Additional drone server ingress annotations |
 | server.ingress.className | string | `""` | Specifies if you want to use different ingress controller for drone server |
 | server.ingress.enabled | bool | `false` | Specifies if you want to create an ingress access to drone server |

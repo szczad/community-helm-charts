@@ -20,8 +20,8 @@ server:
   image:
     # -- The drone server docker image repository to use
     repository: drone/drone
-    # -- The drone server image tag to use
-    tag: 2.11.1
+    # -- The drone server image tag to use. Default app version
+    tag: ""
     # -- The drone server image pull policy
     pullPolicy: IfNotPresent
 

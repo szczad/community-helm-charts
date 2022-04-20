@@ -31,7 +31,7 @@ spec:
         - name: drone-server
           securityContext:
             {{- toYaml .Values.kubeRunner.securityContext | nindent 12 }}
-          image: "{{ .Values.kubeRunner.image.repository }}:{{ .Values.kubeRunner.image.tag | default .Chart.AppVersion }}"
+          image: "{{ .Values.kubeRunner.image.repository }}:{{ .Values.kubeRunner.image.tag }}"
           imagePullPolicy: {{ .Values.kubeRunner.image.pullPolicy }}
           ports:
             - name: http
