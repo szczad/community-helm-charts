@@ -1,0 +1,42 @@
+apiVersion: v1
+name: kserve
+description: Helm chart for KServe Serverless Inferencing on Kubernetes
+icon: https://raw.githubusercontent.com/kserve/artwork/main/icon/color/k-serve-icon-color.png
+
+type: application
+
+version: 0.0.1
+appVersion: "v0.8.0"
+
+home: https://kserve.github.io/website/
+
+maintainers:
+  - name: Burak Ince
+    email: burak.ince@linux.org.tr
+    url: https://www.burakince.net
+
+sources:
+  - http://github.com/kserve/kserve
+  - https://github.com/community-charts/helm-charts
+
+keywords:
+  - kserve
+  - modelmesh
+
+annotations:
+  artifacthub.io/links: |
+    - name: Chart Source
+      url: https://github.com/community-charts/helm-charts
+    - name: Upstream Project
+      url: http://github.com/kserve/kserve
+  artifacthub.io/containsSecurityUpdates: "false"
+  artifacthub.io/changes: |
+    - Add copy of initial helm chart
+  artifacthub.io/license: Apache-2.0
+  artifacthub.io/maintainers: |
+    - name: Burak Ince
+      email: burak.ince@linux.org.tr
+  artifacthub.io/operator: "false"
+  artifacthub.io/prerelease: "false"
+
+dependencies: []
