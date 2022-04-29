@@ -16,7 +16,7 @@ type: application
 # This is the chart version. This version number should be incremented each time you make changes
 # to the chart and its templates, including the app version.
 # Versions are expected to follow Semantic Versioning (https://semver.org/)
-version: 0.0.2
+version: 0.0.3
 
 # This is the version number of the application being deployed. This version number should be
 # incremented each time you make changes to the application. Versions are not expected to
@@ -56,10 +56,10 @@ annotations:
       url: https://github.com/community-charts/helm-charts
   artifacthub.io/containsSecurityUpdates: "false"
   artifacthub.io/changes: |
-    - Add initial drone server and kubernetes runner
+    - Add tag to image definition
   artifacthub.io/images: |
     - name: drone
-      image: drone/drone
+      image: drone/drone:2.11.1
   artifacthub.io/license: MIT
   artifacthub.io/maintainers: |
     - name: Burak Ince
