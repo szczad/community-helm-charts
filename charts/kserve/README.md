@@ -2,7 +2,7 @@
 
 Helm chart for KServe Serverless Inferencing on Kubernetes
 
-![Version: 0.0.1](https://img.shields.io/badge/Version-0.0.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.8.0](https://img.shields.io/badge/AppVersion-v0.8.0-informational?style=flat-square)
+![Version: 1.0.0](https://img.shields.io/badge/Version-1.0.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.8.0](https://img.shields.io/badge/AppVersion-v0.8.0-informational?style=flat-square)
 
 ## Get Helm Repository Info
 
@@ -25,6 +25,12 @@ _See [helm install](https://helm.sh/docs/helm/helm_install/) for command documen
 
 > **Tip**: Search all available chart versions using `helm search repo community-charts -l`. Please don't forget to run `helm repo update` before the command.
 
+## Requirements
+
+| Repository | Name | Version |
+|------------|------|---------|
+| https://charts.jetstack.io | cert-manager(cert-manager) | >=1.5.0 |
+
 ## Uninstall Helm Chart
 
 ```console
@@ -45,6 +51,7 @@ helm upgrade [RELEASE_NAME] community-charts/kserve
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| certManager.enabled | bool | `true` |  |
 | kserve.agent.image | string | `"kserve/agent:v0.8.0"` |  |
 | kserve.controller.deploymentMode | string | `"Serverless"` |  |
 | kserve.controller.gateway.domain | string | `"example.com"` |  |
@@ -107,4 +114,4 @@ helm upgrade [RELEASE_NAME] community-charts/kserve
 
 | Name | Email | Url |
 | ---- | ------ | --- |
-| Burak Ince | <burak.ince@linux.org.tr> | <https://www.burakince.net> |
+| burakince | <burak.ince@linux.org.tr> | <https://www.burakince.net> |

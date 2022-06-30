@@ -4,7 +4,7 @@
 
 A Helm chart for Drone Server and Drone Kubernetes Runner
 
-![Version: 0.0.5](https://img.shields.io/badge/Version-0.0.5-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.12.1](https://img.shields.io/badge/AppVersion-2.12.1-informational?style=flat-square)
+![Version: 0.0.6](https://img.shields.io/badge/Version-0.0.6-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 2.12.1](https://img.shields.io/badge/AppVersion-2.12.1-informational?style=flat-square)
 
 ## Get Helm Repository Info
 
@@ -114,7 +114,7 @@ helm upgrade [RELEASE_NAME] community-charts/drone
 | kubeRunner.podAnnotations | object | `{}` | Annotations for the kube runner pod |
 | kubeRunner.podSecurityContext | object | `{}` | Security context for all kube runner pod |
 | kubeRunner.rbac | object | `{"buildNamespaces":["default"]}` | Each namespace listed below will be configured such that the runner can run build Pods in it. This comes in the form of a Role and a RoleBinding. If you change env.DRONE_NAMESPACE_DEFAULT or the other DRONE_NAMESPACE_* variables, make sure to update this list to include all namespaces. |
-| kubeRunner.replicaCount | int | `1` | (int) Numbers of runner replicas For small or experimental deployments of the Kubernetes runner, 1 replica will suffice. For production cases, 2-3 are recommended. This does not grant additional parallelism, but does ensure that upgrades, config changes, and disruptions are handled more gracefully. |
+| kubeRunner.replicaCount | int | `1` | Numbers of runner replicas For small or experimental deployments of the Kubernetes runner, 1 replica will suffice. For production cases, 2-3 are recommended. This does not grant additional parallelism, but does ensure that upgrades, config changes, and disruptions are handled more gracefully. |
 | kubeRunner.resources | object | `{}` | Set the kube runner resources requests and limits |
 | kubeRunner.securityContext | object | `{}` | Security context for the kube runner container |
 | kubeRunner.service.port | int | `3000` | Default kube runner Service port |
@@ -155,7 +155,7 @@ helm upgrade [RELEASE_NAME] community-charts/drone
 | server.persistentVolume.volumeMode | string | `""` | Drone server data Persistent Volume Binding Mode If defined, volumeMode: <volumeMode> If empty (the default) or set to null, no volumeBindingMode spec is set, choosing the default mode. |
 | server.podAnnotations | object | `{}` | Annotations for the drone server pod |
 | server.podSecurityContext | object | `{}` | Security context for all drone server pod |
-| server.replicaCount | int | `1` | (int) Numbers of server replicas |
+| server.replicaCount | int | `1` | Numbers of server replicas |
 | server.resources | object | `{}` | Set the drone server resources requests and limits |
 | server.secrets | object | `{}` | Drone server secrets |
 | server.securityContext | object | `{}` | Security context for the drone server container |
@@ -181,4 +181,4 @@ For questions, suggestions, and discussion, visit the [Drone community site](htt
 
 | Name | Email | Url |
 | ---- | ------ | --- |
-| Burak Ince | <burak.ince@linux.org.tr> | <https://www.burakince.net> |
+| burakince | <burak.ince@linux.org.tr> | <https://www.burakince.net> |
