@@ -5,7 +5,7 @@ icon: https://raw.githubusercontent.com/kserve/artwork/main/icon/color/k-serve-i
 
 type: application
 
-version: 1.0.0
+version: 1.0.1
 appVersion: "v0.8.0"
 
 home: https://kserve.github.io/website/
