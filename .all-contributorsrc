@@ -59,7 +59,8 @@
       ]
     }
   ],
-  "contributorsPerLine": 7,
+  "contributorsPerLine": 6,
+  "contributorsSortAlphabetically": true,
   "projectName": "helm-charts",
   "projectOwner": "community-charts",
   "repoType": "github",
