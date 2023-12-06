@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/ash
 
 if [[ -z "${PGHOST}" && -z "${MYSQL_HOST}" ]]; then
   HOST="localhost"
