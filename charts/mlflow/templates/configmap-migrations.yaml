@@ -1,0 +1,34 @@
+{{- if and (or .Values.backendStore.postgres.enabled .Values.backendStore.mysql.enabled) .Values.backendStore.databaseMigration }}
+{{- $dbConnectionDriver := "" }}
+{{- if and .Values.backendStore.postgres.enabled .Values.backendStore.postgres.driver }}
+  {{- $dbConnectionDriver = printf "+%s" .Values.backendStore.postgres.driver }}
+{{- else if and .Values.backendStore.mysql.enabled .Values.backendStore.mysql.driver }}
+  {{- $dbConnectionDriver = printf "+%s" .Values.backendStore.mysql.driver }}
+{{- end }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "mlflow.fullname" . }}-migrations
+  labels:
+    app: {{ template "mlflow.name" . }}
+    chart: {{ template "mlflow.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+data:
+  migrations.py: |-
+    from mlflow.store.db import utils
+    import os
+
+
+  {{- if .Values.backendStore.postgres.enabled }}
+    engine = utils.create_sqlalchemy_engine_with_retry("postgresql{{ $dbConnectionDriver }}://")
+  {{- else if .Values.backendStore.mysql.enabled }}
+    username = os.getenv("MYSQL_USERNAME")
+    password = os.getenv("MYSQL_PWD")
+    host = os.getenv("MYSQL_HOST")
+    port = os.getenv("MYSQL_TCP_PORT")
+    database = os.getenv("MYSQL_DATABASE")
+    engine = utils.create_sqlalchemy_engine_with_retry(f"mysql{{ $dbConnectionDriver }}://{username}:{password}@{host}:{port}/{database}")
+  {{- end }}
+    utils._initialize_tables(engine)
+{{- end }}
